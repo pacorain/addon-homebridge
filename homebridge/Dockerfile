@@ -20,15 +20,14 @@ RUN \
         avahi-compat-libdns_sd=0.7-r1 \
         dbus=1.10.24-r1 \
         git=2.18.0-r0 \
-        nodejs=8.11.4-r0 \
-        nodejs-npm=8.11.4-r0 \
+        nodejs \
+        nodejs-npm \
     \
     && npm set unsafe-perm true \
     \
     && npm -g install \
-        node-gyp@3.8.0 \
-        homebridge@0.4.44 \
-        homebridge-homeassistant@3.1.0 \
+        node-gyp \
+        homebridge \
     \
     && apk del --purge .build-dependencies
 
@@ -43,12 +42,12 @@ ARG BUILD_VERSION
 
 # Labels
 LABEL \
-    io.hass.name="Homebridge" \
-    io.hass.description="HomeKit support for your Home Assistant instance using Homebridge" \
+    io.hass.name="Homebridge Ring" \
+    io.hass.description="Homebridge Ring" \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Franck Nijhof <frenck@addons.community>" \
+    maintainer="Austin Rainwater <paco@heckin.io>" \
     org.label-schema.description="HomeKit support for your Home Assistant instance using Homebridge" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="Homebridge" \
